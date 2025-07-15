@@ -1,0 +1,14 @@
+services:
+  konwledge-spider:
+    build: .
+    container_name: konwledge-spider
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=knowledge
+      - DB_USER=handy
+      - DB_PASSWORD=hyh520888
+    volumes:
+      - ./cron.log:/app/cron.log
+    restart: unless-stopped
+
